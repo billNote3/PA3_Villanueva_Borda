@@ -1,0 +1,213 @@
+:root {
+    --color-primario: #111c2ef6;         
+    --color-secundario: rgb(41, 128, 185); 
+    --color-fondo: rgba(226, 226, 226, 0.452); 
+    --color-texto: #2c3e50; /* CORRECCIÓN: Definición de variable faltante */
+    --espaciado-base: 12px;  
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', Poppins, Lato, Verdana, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+.cabecera-principal {
+    background-color: var(--color-primario);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: calc(var(--espaciado-base) * 1.5) 0; 
+}
+
+.menu-navegacion {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 40px; 
+    margin-top: 15px;
+}
+
+.menu-navegacion a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.menu-navegacion a:hover,
+.menu-navegacion a.enlace-activo {
+    background-color: #e12f17;
+    transform: scale(1.05);
+}
+
+.contenedor {
+    width: calc(100% - 40px);
+    max-width: 900px;
+    margin: var(--espaciado-base) auto;
+}
+
+.seccion-contenido {
+    background-color: white;
+    padding: calc(var(--espaciado-base) * 2);
+    margin-top: var(--espaciado-base);
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+@keyframes desvanecerEntrada {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animacion-entrada {
+    animation: desvanecerEntrada 1s ease-out forwards;
+}
+
+.imagen-efecto {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    filter: grayscale(40%) contrast(110%);
+    opacity: 0.9;
+    transition: filter 0.4s ease, opacity 0.4s ease;
+}
+
+.imagen-efecto:hover {
+    filter: grayscale(0%) contrast(100%);
+    opacity: 1;
+}
+
+.bloque-mapa {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.imagen-mapeada {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid var(--color-secundario);
+    border-radius: 6px;
+}
+
+.bloque-svg {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.svg-interactivo {
+    transition: transform 0.5s ease-in-out;
+}
+
+.svg-interactivo:hover {
+    transform: rotate(360deg);
+}
+
+.tabla-datos {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1em;
+}
+
+.tabla-datos th, 
+.tabla-datos td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.tabla-datos th {
+    background-color: var(--color-secundario);
+    color: white;
+    font-weight: bold;
+}
+
+.tabla-datos tr:nth-child(even) {
+    background-color: #f2f4f4;
+}
+
+.formulario-accesible {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.campo-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.campo-grupo label {
+    font-weight: bold;
+    color: var(--color-primario);
+}
+
+.campo-grupo input, 
+.campo-grupo select, 
+.campo-grupo textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1em;
+}
+
+.campo-grupo input:focus, 
+.campo-grupo select:focus, 
+.campo-grupo textarea:focus {
+    outline: 2px solid var(--color-secundario);
+}
+
+.boton-formulario {
+    background-color: var(--color-primario);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.boton-formulario:hover {
+    background-color: var(--color-secundario);
+}
+
+.pie-pagina {
+    text-align: center;
+    padding: var(--espaciado-base);
+    background-color: var(--color-primario);
+    color: white;
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    .menu-navegacion {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .menu-navegacion a {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .contenedor {
+        width: calc(100% - 20px);
+    }
+    
+    .tabla-datos th, 
+    .tabla-datos td {
+        padding: 8px;
+        font-size: 0.85em;
+    }
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Plataforma Académica - UC</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <header class="cabecera-principal">
+        <h1>Plataforma Académica — Universidad Continental</h1>
+    </header>
+
+    <main class="contenedor">
+        <div class="tarjeta-modulo">
+            <h2 class="titulo-modulo">Gestión de Estudiantes</h2>
+            <form id="form-estudiante" class="formulario">
+                <input type="hidden" id="est-id" value="">
+                <input type="text" id="est-codigo" placeholder="Código (Ej. UC001)" required>
+                <input type="text" id="est-nombres" placeholder="Nombres" required>
+                <input type="text" id="est-apellidos" placeholder="Apellidos" required>
+                <input type="email" id="est-correo" placeholder="Correo" required>
+                <input type="text" id="est-carrera" placeholder="Carrera" required>
+                <button type="submit" class="btn btn-guardar">Guardar Estudiante</button>
+            </form>
+
+            <h3 class="titulo-lista">Lista de Estudiantes</h3>
+            <button id="btn-actualizar-est" type="button" class="btn btn-actualizar">Actualizar Tabla</button>
+            <table class="tabla-datos">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Código</th>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                    <th>Carrera</th>
+                    <th>Acciones</th> </tr>
+            </thead>
+            <tbody id="tabla-estudiantes-body">
+                <tr><td colspan="6">Presiona actualizar para ver datos...</td></tr> </tbody>
+        </table>
+        </div>
+
+        <div class="tarjeta-modulo" style="margin-top: 20px;">
+            <h2 class="titulo-modulo">Gestión de Cursos</h2>
+            <form id="form-curso">
+                <input type="hidden" id="cur-id">
+                <input type="text" id="cur-codigo" placeholder="Código">
+                <input type="text" id="cur-nombre" placeholder="Nombre">
+                <input type="text" id="cur-creditos" placeholder="Créditos">
+                <input type="text" id="cur-docente" placeholder="Docente">
+                <button type="submit">Guardar Curso</button>
+            </form>
+
+            <h3 class="titulo-lista">Lista de Cursos</h3>
+            <button id="btn-actualizar-cur" class="btn btn-actualizar">Actualizar Tabla</button>
+            <table class="tabla-datos">
+                <thead>
+                    <tr>
+                        <th>ID</th><th>Código</th><th>Nombre</th><th>Créditos</th><th>Docente</th><th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-cursos-body">
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
